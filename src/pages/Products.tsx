@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ReactLoading from "react-loading";
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import Toast from '../components/Toast';
 import { useDispatch } from 'react-redux';
 import { showToast } from '../redux/slices/toastSlice';
@@ -92,7 +92,7 @@ const Products: React.FC<ProductsProps> = ({ cart, setCart }) => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Toast />
       <div className="container mt-4">
         {loading && <ReactLoading type="spin" color="#000" className="d-block mx-auto" />}

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // 引入 bootstrap
 // import '@/styles/all.scss'; // 引入自訂的 scss 檔案
 import Login from '../components/Login/Login';
 import Product from '../components/Product/Product';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import Toast from '../components/Toast';
 
 // 在頂部添加全局配置
@@ -70,10 +70,10 @@ function Admin() {
   }
   return (
     <>
-    <Navbar 
+    {/* <Navbar 
       isAuth={isAuth} 
       onLogout={() => setIsAuth(false)} 
-    />
+    /> */}
       <Toast />
       {isAuth ? (
         // 如果已登入，顯示產品頁面

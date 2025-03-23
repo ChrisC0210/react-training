@@ -11,12 +11,12 @@ export default function Toast() {
     if (visible) {
       const timer = setTimeout(() => {
         dispatch(hideToast());
-      }, 5000); // Hide after 5 seconds
+      }, 3000); // 隱藏 Toast 的時間
       return () => clearTimeout(timer);
     }
   }, [visible, dispatch]);
 
-  if (!visible) return null; // Don't render anything if not visible
+  if (!visible) return null; // 不顯示 Toast
 
   const isRemoval = message.includes('移除');
   const toastHeaderClassName = isRemoval

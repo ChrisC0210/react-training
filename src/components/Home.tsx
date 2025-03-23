@@ -1,112 +1,77 @@
-import { FC } from 'react'
+import { Link } from 'react-router-dom';
 
-const Home: FC = () => {
-	return (
-		<div className="shopping-home">
-			{/* Hero Banner */}
-			<div className="hero-banner">
-				<div className="container">
-					<div className="row align-items-center">
-						<div className="col-md-6">
-							<h1 className="display-4">Summer Collection 2023</h1>
-							<p className="lead">Discover the latest trends and exclusive deals on our newest arrivals.</p>
-							<button className="btn btn-primary btn-lg">Shop Now</button>
-						</div>
-						<div className="col-md-6">
-							<img src="https://via.placeholder.com/600x400" alt="Summer Collection" className="img-fluid rounded" />
-						</div>
-					</div>
-				</div>
-			</div>
+const HomePage = () => {
+  return (
+    <div>
+      {/* Hero 區塊 */}
+      <section className="bg-light text-center py-5">
+        <h1 className="display-4 fw-bold">歡迎來到 Cat's Store</h1>
+        <p className="lead">為您的毛孩子挑選最棒的商品</p>
+        <Link to="/products" className="btn btn-primary btn-lg mt-3">立即選購</Link>
+      </section>
 
-			{/* Categories Section */}
-			<div className="categories-section py-5">
-				<div className="container">
-					<h2 className="text-center mb-4">Shop by Category</h2>
-					<div className="row">
-						{['Men', 'Women', 'Kids', 'Accessories', 'Home'].map((category) => (
-							<div key={category} className="col-6 col-md-4 col-lg-2 mb-4">
-								<div className="card category-card">
-									<div className="card-body text-center">
-										<h5 className="card-title">{category}</h5>
-										<a href="#" className="stretched-link"></a>
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
+      {/* 熱門分類 */}
+      <section className="container my-5">
+        <h2 className="text-center mb-4">熱門分類</h2>
+        <div className="row text-center">
+          <div className="col-md-4 mb-3">
+            <div className="card p-3">
+              <h5>貓咪飼料</h5>
+            </div>
+          </div>
+          <div className="col-md-4 mb-3">
+            <div className="card p-3">
+              <h5>玩具 & 配件</h5>
+            </div>
+          </div>
+          <div className="col-md-4 mb-3">
+            <div className="card p-3">
+              <h5>貓砂用品</h5>
+            </div>
+          </div>
+        </div>
+      </section>
 
-			{/* Featured Products */}
-			<div className="featured-products py-5 bg-light">
-				<div className="container">
-					<h2 className="text-center mb-4">Featured Products</h2>
-					<div className="row">
-						{[1, 2, 3, 4].map((product) => (
-							<div key={product} className="col-md-3 mb-4">
-								<div className="card product-card h-100">
-									<img src={`https://via.placeholder.com/300x300?text=Product${product}`} className="card-img-top" alt={`Product ${product}`} />
-									<div className="card-body">
-										<h5 className="card-title">Product Name</h5>
-										<p className="card-text text-muted">$99.99</p>
-										<div className="d-flex justify-content-between">
-											<button className="btn btn-sm btn-outline-primary">Add to Cart</button>
-											<button className="btn btn-sm btn-outline-secondary">Details</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
+      {/* 推薦產品 */}
+      <section className="bg-light py-5">
+        <div className="container">
+          <h2 className="text-center mb-4">精選推薦</h2>
+          <div className="row text-center">
+            <div className="col-md-4 mb-3">
+              <div className="card p-3">
+                <h5>超人氣貓糧</h5>
+                <Link to="/products" className="btn btn-outline-primary mt-2">查看產品</Link>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3">
+              <div className="card p-3">
+                <h5>智能貓砂盆</h5>
+                <Link to="/products" className="btn btn-outline-primary mt-2">查看產品</Link>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3">
+              <div className="card p-3">
+                <h5>逗貓神器</h5>
+                <Link to="/products" className="btn btn-outline-primary mt-2">查看產品</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-			{/* Special Offers */}
-			<div className="special-offers py-5">
-				<div className="container">
-					<div className="row">
-						<div className="col-md-6 mb-4">
-							<div className="card bg-dark text-white">
-								<img src="https://via.placeholder.com/600x300?text=Special+Offer" className="card-img" alt="Special Offer" />
-								<div className="card-img-overlay d-flex flex-column justify-content-end">
-									<h3 className="card-title">Special Offer</h3>
-									<p className="card-text">Get up to 50% off on selected items</p>
-									<button className="btn btn-light align-self-start">Shop Now</button>
-								</div>
-							</div>
-						</div>
-						<div className="col-md-6 mb-4">
-							<div className="card bg-dark text-white">
-								<img src="https://via.placeholder.com/600x300?text=New+Arrivals" className="card-img" alt="New Arrivals" />
-								<div className="card-img-overlay d-flex flex-column justify-content-end">
-									<h3 className="card-title">New Arrivals</h3>
-									<p className="card-text">Check out our latest collection</p>
-									<button className="btn btn-light align-self-start">Explore</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+      {/* 關於我們 */}
+      <section className="container my-5">
+        <h2 className="text-center mb-4">關於我們</h2>
+        <p className="text-center">Cat's Store 致力於提供高品質、創新的貓咪用品，讓每一隻貓咪都能擁有幸福生活。</p>
+      </section>
 
-			{/* Newsletter */}
-			<div className="newsletter py-5 bg-light">
-				<div className="container">
-					<div className="row justify-content-center">
-						<div className="col-md-8 text-center">
-							<h3>Subscribe to Our Newsletter</h3>
-							<p className="text-muted">Stay updated with our latest offers and products</p>
-							<div className="input-group mb-3">
-								<input type="email" className="form-control" placeholder="Enter your email" />
-								<button className="btn btn-primary" type="button">Subscribe</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+      {/* 聯絡我們 */}
+      <section className="bg-dark text-white text-center py-5">
+        <h2>聯絡我們</h2>
+        <p>有任何問題歡迎來信：christinachen149@gmail.com</p>
+      </section>
+    </div>
+  );
 };
 
-export default Home;
+export default HomePage;

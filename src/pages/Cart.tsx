@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Navbar from '../components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, removeFromCart, updateCartItemQuantity } from '../redux/slices/cartSlice';
 import { showToast } from '../redux/slices/toastSlice';
@@ -131,7 +130,6 @@ const Cart = () => {
 
   return (
     <>
-      <Navbar />
       <Toast />
       <div className="container mt-4">
         <div className="d-flex justify-content-between align-items-center">

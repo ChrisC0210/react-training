@@ -1,38 +1,36 @@
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 
-// 添加 props 接口
+// 新增 cartCount 屬性，預設為 0
 interface NavbarProps {
   isAuth?: boolean;
   onLogout?: () => void;
+  cartCount?: number;  // 新增購物車數量
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout }) => {
-  // 登出功能
+const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout, cartCount = 0 }) => {
   const handleLogout = async () => {
     try {
       const BASE_URL = import.meta.env.VITE_BASE_URL;
       await axios.post(`${BASE_URL}/v2/logout`, {}, { withCredentials: true });
 
-      // 清除 cookie
       document.cookie = "hexToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      // 清除 axios 默認請求頭
       axios.defaults.headers.common['Authorization'] = '';
 
-      // 呼叫父組件的 onLogout 函數
       if (onLogout) onLogout();
-
       alert('登出成功');
+      window.location.href = '/';
     } catch (error) {
       console.error('登出失敗', error);
       alert('登出失敗');
     }
   };
+
   return (
-    <nav className="container navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="container navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          CART
+          Cat's Store
         </Link>
         <button
           className="navbar-toggler"
@@ -45,8 +43,10 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ms-auto">
+            {/* 首頁 */}
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
@@ -57,6 +57,8 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout }) => {
                 首頁
               </NavLink>
             </li>
+
+            {/* 產品頁 */}
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
@@ -67,7 +69,9 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout }) => {
                 產品頁
               </NavLink>
             </li>
-            <li className="nav-item">
+
+            {/* 購物車 (顯示數量徽章) */}
+            <li className="nav-item position-relative">
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
@@ -75,8 +79,16 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout }) => {
                 to="/cart"
               >
                 購物車
+                {/* 若 cartCount > 0 時，顯示 badge */}
+                {cartCount > 0 && (
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {cartCount}
+                  </span>
+                )}
               </NavLink>
             </li>
+
+            {/* 後台登入 */}
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
@@ -87,19 +99,22 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout }) => {
                 後台登入
               </NavLink>
             </li>
-            {/* 登出 */}
-            {/* 條件渲染登出按鈕 */}
+
+            {/* 已登入才顯示登出按鈕 */}
             {isAuth && (
               <li className="nav-item">
-                <button className="nav-link btn btn-link" onClick={handleLogout}>
+                <button
+                  className="nav-link btn btn-link"
+                  onClick={handleLogout}
+                >
                   登出
                 </button>
               </li>
             )}
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
-    </nav >
+    </nav>
   );
 };
 

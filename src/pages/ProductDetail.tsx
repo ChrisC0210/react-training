@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ReactLoading from "react-loading";
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import { useDispatch } from "react-redux";
 import { showToast } from "../redux/slices/toastSlice";
 import { addToCart } from "../redux/slices/cartSlice";
@@ -87,7 +87,7 @@ const ProductDetail: React.FC = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container mt-4">
         <div className="d-flex justify-content-between align-items-center">
           <h1>產品詳細頁</h1>
