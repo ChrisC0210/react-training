@@ -1,3 +1,31 @@
 .bg-gradient {
   background: linear-gradient(90deg, #ff8a00 0%, #ffe09c 100%);
 }
+.bg-gradient-orange {
+  background: linear-gradient(90deg, #ffa825 0%, #ffe09c 100%);
+}
+.text-gradient {
+  background: linear-gradient(90deg, #ff8a00 0%, #ffe09c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-blue{
+  background: linear-gradient(90deg, #00a8ff 0%, #ff8a00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-orange {
+  color: #ff8a00 ;
+}
+/* 初始狀態：不可見、向下位移 */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* 顯示狀態：淡入、回到原位 */
+.fade-in-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}

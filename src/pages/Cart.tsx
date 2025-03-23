@@ -133,7 +133,7 @@ const Cart = () => {
       <Toast />
       <div className="container mt-4">
         <div className="d-flex justify-content-between align-items-center">
-          <h1>購物車</h1>
+          <h1 className="text-orange fw-bold">購物車</h1>
           <Link to="/products" className="btn btn-outline-primary mt-3">
             返回產品列表
           </Link>

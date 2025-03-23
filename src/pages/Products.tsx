@@ -97,7 +97,7 @@ const Products: React.FC<ProductsProps> = ({ cart, setCart }) => {
       <div className="container mt-4">
         {loading && <ReactLoading type="spin" color="#000" className="d-block mx-auto" />}
         <div className="d-flex justify-content-between align-items-center">
-          <h1>產品列表</h1>
+          <h1 className="text-orange fw-bold">產品列表</h1>
           <Link to="/cart" className="btn btn-primary mt-3">查看購物車</Link>
         </div>
         <table className="table align-middle">

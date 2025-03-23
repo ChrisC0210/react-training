@@ -14,6 +14,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Admin from "./pages/Admin";
+import About from "./pages/About";
 
 const RouteConf = () => {
   // Get the base URL from the environment
@@ -35,6 +36,7 @@ const RouteConf = () => {
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </HashRouter>
