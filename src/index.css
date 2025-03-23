@@ -1,2 +1,183 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* 匯入字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css');
+
+/* 基本樣式 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #333;
+}
+
+/* 添加漸變動畫 */
+.transition-hover {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 定義自定義顏色 */
+.text-orange {
+    color: #f79329 !important;
+}
+
+.bg-orange {
+    background-color: #f79329 !important;
+}
+
+/* 產品卡片樣式 */
+.product-card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+.product-card .card-img-top {
+    transition: transform 0.5s ease;
+}
+
+/* 按鈕懸停效果 */
+.btn-primary {
+    background-color: #f79329 !important;
+    border-color: #f79329 !important;
+}
+
+.btn-primary:hover {
+    background-color: #e58018 !important;
+    border-color: #e58018 !important;
+}
+
+.btn-outline-primary {
+    color: #f79329 !important;
+    border-color: #f79329 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #f79329 !important;
+    color: white !important;
+}
+
+/* 淡入動畫 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__fadeIn {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* 響應式設計相關樣式 */
+@media (max-width: 992px) {
+    .hero-banner h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .hero-banner .lead {
+        font-size: 1.1rem !important;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        text-align: center;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .hero-banner h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .hero-banner .btn {
+        margin-bottom: 2rem;
+    }
+
+    .special-offers .card-img-overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .special-offers .card-img-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .newsletter h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-banner h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .rounded-pill {
+        border-radius: 50rem !important;
+    }
+
+    .newsletter .form-control {
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+/* 表格響應式處理 */
+@media (max-width: 768px) {
+    .table-responsive-custom {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* 改善小屏幕上的導航菜單 */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-top: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.25rem 0;
+    }
+}
