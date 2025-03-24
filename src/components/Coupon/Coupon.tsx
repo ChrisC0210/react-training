@@ -198,7 +198,7 @@ const CouponPage: React.FC<CouponProps> = ({ token }) => {
 	};
 
 	return (
-		<section className="container mt-5">
+		<section className="container mt-2">
 			{/* 回到admin.tsx */}
 			<Link to="/Admin" className="btn btn-outline-primary me-2 mb-4">
 				回到管理頁面

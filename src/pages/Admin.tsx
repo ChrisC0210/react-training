@@ -84,7 +84,7 @@ function Admin() {
               優惠券管理
             </Link>
             {/* 前往後台訂單管理 */}
-            <Link to="/admin/coupon" className="btn btn-outline-primary me-2">
+            <Link to="/admin/order" className="btn btn-outline-primary me-2">
               訂單管理
             </Link>
           </div>
