@@ -40,19 +40,19 @@ const HomePage = () => {
 						<div className="col-md-4 mb-3">
 							<div className="card p-3">
 								<h5>超人氣貓糧</h5>
-								<Link to="/products" className="btn btn-outline-primary mt-2">查看產品</Link>
+								<Link to="/products/-OM4pQo1-CnRBAkPN-MB" className="btn btn-outline-primary mt-2">查看產品</Link>
 							</div>
 						</div>
 						<div className="col-md-4 mb-3">
 							<div className="card p-3">
 								<h5>智能貓砂盆</h5>
-								<Link to="/products" className="btn btn-outline-primary mt-2">查看產品</Link>
+								<Link to="/products/-OM4go69eEB8pIw41URw" className="btn btn-outline-primary mt-2">查看產品</Link>
 							</div>
 						</div>
 						<div className="col-md-4 mb-3">
 							<div className="card p-3">
 								<h5>逗貓神器</h5>
-								<Link to="/products" className="btn btn-outline-primary mt-2">查看產品</Link>
+								<Link to="/products/-OM4j8V33AwIShu1zABj" className="btn btn-outline-primary mt-2">查看產品</Link>
 							</div>
 						</div>
 					</div>
