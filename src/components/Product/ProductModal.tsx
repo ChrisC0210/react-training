@@ -360,7 +360,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 </div>
               </div>
               {/* LV3 */}
-              <div className="col-md-12">
+              {/* <div className="col-md-12">
                 <div className="mb-3">
                   <label htmlFor="rating" className="form-label">商品評價星級 (1~5)</label>
                   <input
@@ -385,7 +385,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
                     placeholder="請輸入庫存數量"
                   />
                 </div>
-              </div>
+              </div> */}
               {/*  */}
             </div>
             {/*  */}

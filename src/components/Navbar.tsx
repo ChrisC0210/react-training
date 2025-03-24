@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, onLogout, cartCount = 0 }) => {
 
       if (onLogout) onLogout();
       alert('登出成功');
-      window.location.href = '/';
+      window.location.href = 'https://chrisc0210.github.io/react-training/#/';
     } catch (error) {
       console.error('登出失敗', error);
       alert('登出失敗');

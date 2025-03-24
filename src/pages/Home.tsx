@@ -27,16 +27,16 @@ export default function Home() {
 	return (
 		<div className="shopping-home">
 			{/* Hero 區塊 */}
-			<div className="hero-banner py-5" style={{ 
+			<div className="hero-banner py-5" style={{
 				background: "linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)",
 				boxShadow: "inset 0 0 100px rgba(0,0,0,0.05)"
 			}}>
 				<div className="container py-4">
 					<div className="row align-items-center">
 						<div className="col-md-6">
-							<h1 className="display-4 fw-bold" style={{ 
-								color: "#5a3e36", 
-								textShadow: "1px 1px 2px rgba(0,0,0,0.1)" 
+							<h1 className="display-4 fw-bold" style={{
+								color: "#5a3e36",
+								textShadow: "1px 1px 2px rgba(0,0,0,0.1)"
 							}}>歡迎光臨 Cat's Store</h1>
 							<p className="lead" style={{ color: "#5a3e36" }}>
 								為您與愛貓量身打造的專屬好物，立即探索精彩商品！
@@ -48,7 +48,7 @@ export default function Home() {
 								transition: "all 0.3s ease",
 								border: "none"
 							}} onMouseOver={(e) => e.currentTarget.style.background = "#ff8300"}
-								 onMouseOut={(e) => e.currentTarget.style.background = "#f79329"}>
+								onMouseOut={(e) => e.currentTarget.style.background = "#f79329"}>
 								立即選購 <i className="bi bi-arrow-right ms-2"></i>
 							</Link>
 						</div>
@@ -205,7 +205,7 @@ export default function Home() {
 			</div>
 
 			{/* 訂閱電子報 區塊 */}
-			<div className="newsletter py-5" style={{ 
+			<div className="newsletter py-5" style={{
 				background: "linear-gradient(135deg, #ffe8cc 0%, #f7d9c4 100%)",
 				boxShadow: "inset 0 0 50px rgba(0,0,0,0.03)"
 			}}>
