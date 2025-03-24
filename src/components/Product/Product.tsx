@@ -11,6 +11,9 @@ import DeleteProductModal from './DeleteProductModal';
 import { useDispatch } from 'react-redux';
 import { showToast } from '../../redux/slices/toastSlice';
 
+// import Coupon from '../Coupon/Coupon';
+// import { Link } from 'react-router-dom';
+
 interface ProductProps {
   isAuth: boolean;
   token?: string;

@@ -6,8 +6,9 @@ import Login from '../components/Login/Login';
 import Product from '../components/Product/Product';
 // import Navbar from '../components/Navbar';
 import Toast from '../components/Toast';
+import { Link } from 'react-router-dom';
 
-// 在頂部添加全局配置
+// 添加全局配置
 axios.defaults.withCredentials = true;
 
 function Admin() {
@@ -70,15 +71,30 @@ function Admin() {
   }
   return (
     <>
-    {/* <Navbar 
+      {/* <Navbar 
       isAuth={isAuth} 
       onLogout={() => setIsAuth(false)} 
     /> */}
       <Toast />
       {isAuth ? (
-        // 如果已登入，顯示產品頁面
-        // 傳遞 token 給產品頁面
-        <Product isAuth={isAuth} token={axios.defaults.headers.common['Authorization'] as string || undefined} />
+        <>
+          {/* 已登入狀態下，顯示「前往優惠券管理」連結 */}
+          <div className="container my-3">
+            <Link to="/admin/coupon" className="btn btn-outline-primary me-2">
+              優惠券管理
+            </Link>
+            {/* 前往後台訂單管理 */}
+            <Link to="/admin/coupon" className="btn btn-outline-primary me-2">
+              訂單管理
+            </Link>
+          </div>
+
+          {/* 已登入則顯示產品管理頁 (Product) */}
+          <Product
+            isAuth={isAuth}
+            token={axios.defaults.headers.common['Authorization'] as string}
+          />
+        </>
       ) : (
         // 尚未登入就顯示登入畫面
         <Login handleLogin={handleLogin} />
